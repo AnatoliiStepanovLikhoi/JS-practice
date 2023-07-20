@@ -56,3 +56,32 @@ function format(formatMode) {
       return now.toLocaleTimeString();
   }
 }
+
+//Функція приймає рядок виду "DunYweMY48"
+//та повертає "D+unY+weM+Y+48"
+
+function transform(input) {
+  const characters = input.split("");
+
+  let result = characters
+    .map((char) => (char === char.toLowerCase() ? char : char + "+"))
+    .join("");
+
+  return result;
+}
+
+console.log(transform("DunYweMY48"));
+
+// функція приймає довільне число типу 5681
+// та повертає рядок виду "5000+600+80+1"
+
+function decompose(input) {
+  return input
+    .toString()
+    .split("")
+    .map((digit, index, array) => digit + "0".repeat(array.length - index - 1))
+    .filter((segment) => segment > 0)
+    .join("+");
+}
+
+console.log(decompose(5681));
