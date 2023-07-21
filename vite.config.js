@@ -4,7 +4,7 @@ import handlebars from "vite-plugin-handlebars";
 export default {
   plugins: [
     handlebars({
-      partialDirectory: resolve(__dirname, "03-theory"),
+      partialDirectory: resolve(__dirname, "04-async"),
     }),
   ],
 };
